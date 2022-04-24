@@ -1,0 +1,48 @@
+// Sidebar
+.sidebar {
+	width: 370px;
+	background-color: $gray500;
+
+	.sidebar-container {
+		width: 80%;
+		margin: 0 auto;
+		padding: 4rem 0;
+
+		.title {
+			padding-bottom: 2rem;
+
+			p {
+				color: $primary;
+				font-weight: 700;
+				margin: 0;
+			}
+	
+			h3 {
+				font-size: 2rem;
+				font-weight: 900;
+				margin: 0;
+			}
+		}
+
+		.form-wrapper {
+			display: flex;
+			flex-direction: column;
+
+			input {
+				background-color: $gray400;
+				padding: 1rem 1.25rem;
+				border-radius: 1rem;
+				margin: .5rem 0;
+				outline: none;
+				border: none;
+			}
+
+			.search-btn {
+				background-color: $primary;
+				color: white;
+				font-weight: 900;
+				font-size: 1rem;
+			}
+		}
+	}
+}
