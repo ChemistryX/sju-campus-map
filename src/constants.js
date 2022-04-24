@@ -1,3 +1,14 @@
+export const messages = {
+	placeholder: {
+		origin: "출발지를 입력하세요.",
+		dest: "도착지를 입력하세요."
+	},
+	noOriginSpecified: "출발지를 입력해주세요.",
+	noDestSpecified: "도착지를 입력해주세요.",
+	originDestCannotBeSame: "출발지와 도착지는 같을 수 없어요.",
+	noResults: "결과가 없습니다."
+};
+
 export const availablePlaces = [
 	{
 		name: "집현관",

@@ -1,6 +1,6 @@
 // Sidebar
 .sidebar {
-	width: 370px;
+	width: 420px;
 	background-color: $gray500;
 
 	.sidebar-container {
@@ -28,20 +28,52 @@
 			display: flex;
 			flex-direction: column;
 
-			input {
+			:global(.autocomplete) {
+				margin: .75rem 0;
+			}
+
+			:global(.autocomplete-input), .input {
 				background-color: $gray400;
 				padding: 1rem 1.25rem;
 				border-radius: 1rem;
-				margin: .5rem 0;
 				outline: none;
 				border: none;
 			}
 
-			.search-btn {
+			:global(.autocomplete-list) {
+				margin-top: .25rem;
+				border: 1px solid $gray300;
+				border-radius: 1rem;
+			}
+
+			:global(.autocomplete-list-item) {
+				padding: .75rem 1rem;
+			}
+
+			:global(.autocomplete-list-item.selected) {
 				background-color: $primary;
+			}
+
+			:global(.autocomplete-list-item.confirmed) {
+				background-color: rgba($primary, 0.75);
+			}
+
+			.search-btn {
+				display: flex;
+				justify-content: center;
+				background-color: $primary;
+				margin: .75rem 0;
 				color: white;
 				font-weight: 900;
 				font-size: 1rem;
+
+				span {
+					margin-left: .2rem;
+				}
+
+				&:hover {
+					background-color: rgba($primary, 0.9);
+				}
 			}
 		}
 	}
