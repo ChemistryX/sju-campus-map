@@ -1,12 +1,12 @@
 @charset "utf-8";
 // Base
 
-html {
+:global(html) {
 	height: 100%;
 	scroll-behavior: smooth;
 }
 
-body {
+:global(body) {
 	display: flex;
 	flex-direction: column;
 	height: 100%;

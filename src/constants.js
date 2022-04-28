@@ -1,3 +1,4 @@
+export const tMapAppKey = "l7xxeda087f684e040b4be4a52efad6830b8";
 export const messages = {
 	placeholder: {
 		origin: "출발지를 입력하세요.",
@@ -131,3 +132,36 @@ export const availablePlaces = [
 		longitude: 127.072913667574,
 	},
 ];
+
+export const transformCoordinatesArrayForTMap = (arrayOfPathObject) => {
+	const coordinatesArray = [];
+  
+	arrayOfPathObject?.forEach((pathObject, index) => {
+	  const pathData = pathObject.geometry.coordinates;
+  
+	  if (Array.isArray(pathData[0])) {
+		pathData.forEach((coord, index) => {
+		  const lastIndex = coordinatesArray.length - 1;
+		  const longitude = coord[0];
+		  const latitude = coord[1];
+		  if (!coordinatesArray.length) {
+			coordinatesArray.push({ 'latitude': latitude, 'longitude': longitude });
+		  } else if (coordinatesArray[lastIndex].latitude !== latitude || coordinatesArray[lastIndex].longitude !== longitude) {
+			coordinatesArray.push({ 'latitude': latitude, 'longitude': longitude });
+		  }
+		});
+	  } else {
+		const lastIndex = coordinatesArray.length - 1;
+		const longitude = pathData[0];
+		const latitude = pathData[1];
+  
+		if (!coordinatesArray.length) {
+		  coordinatesArray.push({ 'latitude': latitude, 'longitude': longitude });
+		} else if (coordinatesArray[lastIndex].latitude !== latitude || coordinatesArray[lastIndex].longitude !== longitude) {
+		  coordinatesArray.push({ 'latitude': latitude, 'longitude': longitude });
+		}
+	  }
+	});
+  
+	return coordinatesArray;
+};

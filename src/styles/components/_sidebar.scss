@@ -24,6 +24,12 @@
 			}
 		}
 
+		.status-wrapper {
+			.hidden {
+				visibility: hidden;
+			}
+		}
+
 		.form-wrapper {
 			display: flex;
 			flex-direction: column;
