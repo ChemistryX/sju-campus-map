@@ -1,2 +1,2 @@
-# sju-contest-2022
+# sju-campus-map
  
